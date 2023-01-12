@@ -1,2 +1,6 @@
 # node-red_temperature_monitoring
-repo to share node-red project
+This repo is intended to share my first node-red project for temperature logging of a boiler. T1 is the often higher temperature which can be measured next to the original temperature sensors of the boiler (there is two for redundandency). T2 is actually measured at the inlet tube, which is a good indicator for waterflow. This temperature increases if now hot water is consumed, due to the backflow of hot water into the feeding tube. 
+
+I've started with a first function node named 'Format Spreadsheet line', which is writing date&time followed by the two temperatures. This script is erroneous, because it can't handle the race condition between the two measurements. I could not manage to differentiate T1 and T2 by the topic and also not to write all values into one line after dat&time. This flow runs since 2019-02-26, when the last descaling was carried out. The aim is to detect the need of descaling by a smaller slope of the heat-up of T1 after consuming water for a longer period, followed by undisturbed heat-up process.
+
+The second function node named 'second try' was implemented in 2023-01-11, when I first saw a Node-Red video from Opto22 about writing values into a file. This writes identifyable values into the file, but there is too much overhead. At least can this data be used for later analysis.

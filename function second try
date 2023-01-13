@@ -1,0 +1,16 @@
+var d = new Date();
+var t = d.getTime();
+payload = {"time":t,"payload":msg.payload,"topic":msg.topic,"T1":msg.T1};
+msg.payload=payload;
+return msg;
+
+//code of function second try saves this content into file. Temperatures are identified 
+//with topic T1 or T2 but order is random. Timestamp is complete and usable but too
+//much overhead. Desired would be a single line per measurement.
+
+//{"time":1672427663787,"payload":"2022-12-30 20:14:23","topic":"timestamp"}
+//{"time":1672427664637,"payload":58.8,"topic":"T2"}
+//{"time":1672427664717,"payload":35.6,"topic":"T1"}
+//{"time":1672427673795,"payload":"2022-12-30 20:14:33","topic":"timestamp"}
+//{"time":1672427674638,"payload":34.2,"topic":"T1"}
+//{"time":1672427674718,"payload":58.6,"topic":"T2"}

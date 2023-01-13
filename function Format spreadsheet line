@@ -1,0 +1,24 @@
+//My very first try to write-out temperature data into spreadsheet file.
+//Temperatures are not written in constant order. There seems to be a race 
+//condition. 
+
+var o = msg.payload; // get payload
+var topic=msg.payload;
+//msg.topic=topic.toUpperCase(); // convert to UPPERCASE
+//msg.sString = o.timestamp + o.T1 + o.T2;
+//var msg1 =  { payload:o.timestamp };
+//var msg2 =  { payload:o.T1 };
+//var msg3 =  { payload:o.T2 };
+//return [ [ msg1, msg2, msg3 ] ];  //lines 7 to 12 are attempts to get it right but...
+return msg;
+
+//example of file output:
+//2022-01-19 00:12:49
+//36.8
+//57.3
+//2022-01-19 00:12:59
+//57.3
+//36.8
+//2022-01-19 00:13:09
+//36.9
+//57.3

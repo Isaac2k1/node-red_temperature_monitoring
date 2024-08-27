@@ -20,6 +20,4 @@ This flow has been running since 2019-02-26, the date of the last descaling. The
 
 The second function node, named **'Second Try'**, was implemented on 2023-01-11 after watching a Node-RED video by Norm Freeman from Opto22 about writing values into a file. This node writes identifiable values into the file but introduces too much overhead. Nevertheless, this data can be used for later analysis.
 
----
 
-Feel free to let me know if there are any specific areas you'd like to focus on or if you need further adjustments!

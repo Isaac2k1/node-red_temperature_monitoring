@@ -1,6 +1,25 @@
 # node-red_temperature_monitoring
-This repo is intended to share my first node-red project for temperature logging of a boiler. T1 is the often higher temperature which can be measured next to the original temperature sensors of the boiler (there is two for redundandency). T2 is actually measured at the inlet tube, which is a good indicator for waterflow. This temperature increases if now hot water is consumed, due to the backflow of hot water into the feeding tube. 
 
-I've started with a first function node named 'Format Spreadsheet line', which is writing date&time followed by the two temperatures. This script is erroneous, because it can't handle the race condition between the two measurements. I could not manage to differentiate T1 and T2 by the topic and also not to write all values into one line after dat&time. This flow runs since 2019-02-26, when the last descaling was carried out. The aim is to detect the need of descaling by a smaller slope of the heat-up of T1 after consuming water for a longer period, followed by undisturbed heat-up process.
+This repository contains my first Node-RED project for logging the temperature of a boiler. The project involves monitoring two temperature points:
 
-The second function node named 'second try' was implemented in 2023-01-11, when I first saw a Node-Red video from Norm Freeman from Opto22 about writing values into a file. This writes identifyable values into the file, but there is too much overhead. At least can this data be used for later analysis.
+- **T1**: This is typically the higher temperature, measured next to the boiler's original temperature sensors (there are two for redundancy).
+- **T2**: This is measured at the inlet tube and serves as a good indicator of water flow. The temperature increases if no hot water is consumed during a longer period of time, due to the backflow of hot water into the feeding tube.
+
+## Project Overview
+
+### Initial Implementation
+
+The first function node, named **'Format Spreadsheet Line'**, was designed to write the date & time followed by the two temperatures. However, this script has some issues:
+- It cannot handle the race condition between the two measurements.
+- It fails to differentiate between T1 and T2 by topic.
+- It does not write all values into one line after the date & time.
+
+This flow has been running since 2019-02-26, the date of the last descaling. The goal is to determine the need for boiler descaling by monitoring the slope of the heating curve.
+
+### Second Implementation
+
+The second function node, named **'Second Try'**, was implemented on 2023-01-11 after watching a Node-RED video by Norm Freeman from Opto22 about writing values into a file. This node writes identifiable values into the file but introduces too much overhead. Nevertheless, this data can be used for later analysis.
+
+---
+
+Feel free to let me know if there are any specific areas you'd like to focus on or if you need further adjustments!
